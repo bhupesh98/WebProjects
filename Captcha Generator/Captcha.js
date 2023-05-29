@@ -46,7 +46,14 @@ const submitBtnClick = () => {
     }
 };
 
+let captchaFilled = document.querySelector(".captcha_input input");
+
 captchaInputBox.addEventListener("keyup",captchaKeyUpValidate);
 submitButton.addEventListener("click",submitBtnClick);
+captchaFilled.addEventListener("keydown",(e)=> {
+    if (e.key === "Enter") {
+        submitBtnClick();
+    }
+});
 
 generateCaptcha();
